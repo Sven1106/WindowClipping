@@ -8,6 +8,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Drawing;
+using System.Windows.Forms;
 
 namespace WindowClipping
 {
@@ -39,7 +40,7 @@ namespace WindowClipping
         [StructLayout(LayoutKind.Sequential)]
         internal struct Win32Point
         {
-        
+
             public Int32 X;
             public Int32 Y;
         };
@@ -49,7 +50,7 @@ namespace WindowClipping
             Win32Point w32Mouse = new Win32Point();
             GetCursorPos(ref w32Mouse);
             return new Point(w32Mouse.X, w32Mouse.Y);
-        } 
+        }
 
 
         #endregion
@@ -79,23 +80,29 @@ namespace WindowClipping
         static void Main()
         {
             Rectangle rect = new Rectangle();
-            
-            IntPtr hWnd = new IntPtr();
+            Rectangle resolution = Screen.PrimaryScreen.Bounds;
 
+            IntPtr hWnd = new IntPtr();
             while (true)
             {
-                //ClipCursor(ref rOldClip);
-                GetWindowRect(hWnd, out rect);//based on the ForegroundWindow
-                hWnd = GetForegroundWindow();
-                Point cursorPos = GetMousePosition();
-                int x = (int)cursorPos.X; //(int)converts from Point to int
-                int y = (int)cursorPos.Y;
 
-                //Console.WriteLine("x: {0},y: {1}", x, y);
-                Console.WriteLine(rect.Width);
-                Console.WriteLine(rect.Height);
-                //    Console.WriteLine(GetWindowText(hWnd));
-                Thread.Sleep(1000);
+                hWnd = GetForegroundWindow();
+                var hWndTitle = GetWindowText(hWnd);
+
+                GetWindowRect(hWnd, out rect);//based on the ForegroundWindow
+                if (resolution.Width == rect.Width && resolution.Height == rect.Height)
+                {
+                    ClipCursor(ref rect);
+                    Point cursorPos = GetMousePosition();
+                    //int x = (int)cursorPos.X; //(int)converts from Point to int
+                    //int y = (int)cursorPos.Y;
+                    //Console.WriteLine("x: {0},y: {1}", x, y);
+                    //Console.WriteLine(rect.Width);
+                    //Console.WriteLine(rect.Height);
+                    Console.WriteLine(GetWindowText(hWnd));
+                }
+                Thread.Sleep(1);
+
             }
 
 
