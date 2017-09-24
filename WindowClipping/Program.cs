@@ -90,22 +90,20 @@ namespace WindowClipping
                 var hWndTitle = GetWindowText(hWnd);
 
                 GetWindowRect(hWnd, out rect);//based on the ForegroundWindow
-                if (resolution.Width == rect.Width && resolution.Height == rect.Height)
+                if (resolution.Width == rect.Width && resolution.Height == rect.Height && hWndTitle != "")
                 {
                     ClipCursor(ref rect);
                     Point cursorPos = GetMousePosition();
                     //int x = (int)cursorPos.X; //(int)converts from Point to int
                     //int y = (int)cursorPos.Y;
                     //Console.WriteLine("x: {0},y: {1}", x, y);
-                    //Console.WriteLine(rect.Width);
-                    //Console.WriteLine(rect.Height);
-                    Console.WriteLine(GetWindowText(hWnd));
+                    Console.WriteLine("Resolution = {0}x{1} & Window = {2}x{3}", resolution.Width, resolution.Height, rect.Width, rect.Height);
+                    Console.WriteLine(rect.Height);
+                    //Console.WriteLine(GetWindowText(hWnd));
+                    Thread.Sleep(100);
                 }
-                Thread.Sleep(1);
 
             }
-
-
         }
 
     }
