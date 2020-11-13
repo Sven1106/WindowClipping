@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowClipping", "WindowClipping\WindowClipping.csproj", "{5DC41A27-6D54-47A1-8AC8-9246262CA612}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowScaler", "WindowScaler\WindowScaler.csproj", "{B31F01C4-40F7-457D-AA3D-781B9E3253A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5DC41A27-6D54-47A1-8AC8-9246262CA612}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5DC41A27-6D54-47A1-8AC8-9246262CA612}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5DC41A27-6D54-47A1-8AC8-9246262CA612}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B31F01C4-40F7-457D-AA3D-781B9E3253A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B31F01C4-40F7-457D-AA3D-781B9E3253A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B31F01C4-40F7-457D-AA3D-781B9E3253A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B31F01C4-40F7-457D-AA3D-781B9E3253A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -71,8 +71,6 @@ namespace WindowClipping
                 GetWindowText(hWnd, builder, builder.Capacity);//How does GetWindowText write to Builder?
                 return builder.ToString();
             }
-
-
             return String.Empty;
         }
 
@@ -100,8 +98,8 @@ namespace WindowClipping
                     Console.WriteLine("Resolution = {0}x{1} & Window = {2}x{3}", resolution.Width, resolution.Height, rect.Width, rect.Height);
                     Console.WriteLine(rect.Height);
                     //Console.WriteLine(GetWindowText(hWnd));
-                    Thread.Sleep(100);
                 }
+                Thread.Sleep(100);
 
             }
         }
